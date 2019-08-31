@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:apps="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="restaurent"
+            type="com.devika.restaurants.data.model.Restaurant" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="2dp"
+        tools:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:button="@drawable/favourite_btn"
+                android:checked="@{restaurent.favourite}"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="6dp"
+                android:text="@{restaurent.name}"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/fav"
+                android:text="@{restaurent.status.status}"
+                android:textSize="20dp"
+                android:textStyle="normal"
+
+
+                />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingbarDefault"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/restaurantName"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:numStars="@{5}"
+                android:stepSize="0.1"
+                apps:rating="@{restaurent.sortingValues.ratingAverage}" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

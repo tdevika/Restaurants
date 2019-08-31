@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_menu"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:icon="@drawable/ic_filter_list_black"
+        android:title="Main Menu"
+        app:showAsAction="always">
+        <menu>
+            <group
+                android:id="@+id/sorting_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/ave_prod_price"
+                    android:title="@string/ave_prod_price" />
+                <item
+                    android:id="@+id/best_match"
+                    android:title="@string/best_match" />
+                <item
+                    android:id="@+id/delivery_cost"
+                    android:title="@string/delivery_cost" />
+                <item
+                    android:id="@+id/distance"
+                    android:title="@string/distance" />
+                <item
+                    android:id="@+id/min_cost"
+                    android:title="@string/min_cost" />
+                <item
+                    android:id="@+id/newest"
+                    android:title="@string/newest" />
+                <item
+                    android:id="@+id/popularity"
+                    android:title="@string/popularity" />
+                <item
+                    android:id="@+id/average_rating"
+                    android:title="@string/average_rating" />
+            </group>
+
+        </menu>
+    </item>
+
+</menu>

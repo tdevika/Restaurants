@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Restaurants</string>
+    <string name="ave_prod_price">Average Product Price</string>
+    <string name="best_match">Best Match</string>
+    <string name="delivery_cost">Delivery Cost</string>
+    <string name="distance">Distance</string>
+    <string name="min_cost">Minimum Cost</string>
+    <string name="newest">Newest</string>
+    <string name="popularity">Popularity</string>
+    <string name="average_rating">Average Rating</string>
+    <string name="search">Search Restaurants</string>
+
+</resources>
