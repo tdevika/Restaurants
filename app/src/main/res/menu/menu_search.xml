@@ -10,7 +10,8 @@
     <item
         android:icon="@drawable/ic_filter_list_black"
         android:title="Main Menu"
-        app:showAsAction="always">
+        app:showAsAction="always"
+        >
         <menu>
             <group
                 android:id="@+id/sorting_group"

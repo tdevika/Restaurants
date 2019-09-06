@@ -88,18 +88,21 @@ class RestarentListFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.groupId == R.id.sorting_group) {
-            var selectedOption = when (item?.itemId) {
-                R.id.ave_prod_price -> "ave_prod_price asc"
-                R.id.best_match -> "best_match desc"
-                R.id.delivery_cost -> "delivery_cost asc"
-                R.id.distance -> "distance asc"
-                R.id.min_cost -> "min_cost asc"
-                R.id.newest -> "newest desc"
-                R.id.popularity -> "popularity desc"
-                R.id.average_rating -> "rating_average DESC"
-                else -> "popularity desc"
+            if (!item.isChecked) {
+                item.isChecked = true
+                var selectedOption = when (item?.itemId) {
+                    R.id.ave_prod_price -> "ave_prod_price asc"
+                    R.id.best_match -> "best_match desc"
+                    R.id.delivery_cost -> "delivery_cost asc"
+                    R.id.distance -> "distance asc"
+                    R.id.min_cost -> "min_cost asc"
+                    R.id.newest -> "newest desc"
+                    R.id.popularity -> "popularity desc"
+                    R.id.average_rating -> "rating_average DESC"
+                    else -> "popularity desc"
+                }
+                restarentListViewModel.getRestaurents(selectedOption)
             }
-            restarentListViewModel.getRestaurents(selectedOption)
         }
         return super.onOptionsItemSelected(item)
 
